@@ -11,28 +11,28 @@ const Main = ({ templates }) => {
   };
 
   return (
-    <div className="mt-2 mx-auto bg-custom-blue pb-3 main ">
-      <div className="bg-custom-slate-blue  py-2 container-fluid">
+    <div className="mt-2 mx-auto bg-custom-paper pb-3 main border border-dark">
+      <div className="bg-custom-dim-gold  py-2 container-fluid">
         <form className="form-inline border border-light rounded w-25 px-2">
           <i
             className="fas fa-search text-light small pr-2"
             aria-hidden="true"
           />
           <input
-            className="bg-transparent form-control form-control-sm border border-0 ml-1 w-75"
+            className="bg-transparent form-control form-control-sm text-light border border-0 ml-1 w-75"
             type="text"
             placeholder="Search"
             aria-label="Search"
           />
         </form>
       </div>
-      <div className="bg-custom-blue container-fluid py-2 text-light">
+      <div className="bg-custom-paper container-fluid py-2">
         <strong>Record Templates</strong>
       </div>
-      <div className="bg-custom-slate-blue container-fluid py-1 clearfix mb-3">
+      <div className="bg-custom-dim-gold container-fluid py-1 clearfix mb-3">
         <Link
           to="/manage-record-templates"
-          className="btn btn-sm btn-primary bg-custom-light-blue custom-radius border border-light float-right px-3 small"
+          className="btn btn-sm bg-custom-pale-gold text-light custom-radius border border-light float-right px-3 small"
         >
           Manage Templates <i className="fa fa-cog ml-3" />
         </Link>
@@ -43,8 +43,8 @@ const Main = ({ templates }) => {
             <RecordLists key={template._id} template={template} index={index} />
           ))
         ) : (
-          <div className=" w-100 bg-custom-dark-blue p-2 clearfix text-center text-light">
-            No Template
+          <div className=" w-100 bg-custom-pale-gold p-2 clearfix text-center text-dark">
+            <strong>No Template</strong>
           </div>
         )}
       </div>

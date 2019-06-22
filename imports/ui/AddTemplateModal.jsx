@@ -79,10 +79,10 @@ const AddTemplateModal = ({ setErrors, setAlert }) => {
       <div className="modal-dialog modal-xl" role="document">
         <div className="modal-content">
           <div className="modal-body p-0">
-            <div className="bg-custom-blue pb-3  ">
-              <div className="bg-custom-slate-blue  py-2 container-fluid">
+            <div className="bg-custom-paper pb-3  ">
+              <div className="bg-custom-dim-gold py-2 container-fluid">
                 <button
-                  className="btn btn-sm btn-transparent text-light"
+                  className="btn btn-sm btn-custom-paper text-light"
                   data-dismiss="modal"
                 >
                   <i className="fa fa-times" />
@@ -90,7 +90,7 @@ const AddTemplateModal = ({ setErrors, setAlert }) => {
                 <button
                   onClick={saveTemplate}
                   type="button"
-                  className="btn btn-sm btn-primary bg-custom-light-blue custom-radius border border-light px-4 small float-right"
+                  className="btn btn-sm bg-custom-pale-gold text-light custom-radius border border-light px-4 small float-right"
                   data-dismiss="modal"
                 >
                   Save
@@ -98,26 +98,24 @@ const AddTemplateModal = ({ setErrors, setAlert }) => {
                 </button>
               </div>
 
-              <div className="container-fluid py-2 text-light">
+              <div className="container-fluid py-2">
                 <form
-                  className="d-flex flex-row bg-custom-dark-blue"
+                  className="d-flex flex-row rounded"
                   onSubmit={e => e.preventDefault()}
                 >
-                  <div className="w-50 p-2">
-                    <div className="">
-                      <input
-                        className="text-light bg-transparent form-control form-control-sm border border-0"
-                        type="text"
-                        placeholder="Template Name"
-                        aria-label="Template Name"
-                        value={templateName}
-                        onChange={e => settemplateName(e.target.value)}
-                      />
-                    </div>
+                  <div className="w-50 bg-custom-pale-gold p-1">
+                    <input
+                      className="form-control form-control-sm border border-light"
+                      type="text"
+                      placeholder="Template Name"
+                      aria-label="Template Name"
+                      value={templateName}
+                      onChange={e => settemplateName(e.target.value)}
+                    />
                   </div>
                 </form>
               </div>
-              <div className="bg-custom-slate-blue container-fluid py-1 clearfix mb-3">
+              <div className="bg-custom-dim-gold container-fluid py-1 clearfix mb-3">
                 <div className="d-flex flex-row text-light mt-2">
                   <div className="w-50">
                     <label htmlFor="" className="small ml-3">
@@ -143,13 +141,13 @@ const AddTemplateModal = ({ setErrors, setAlert }) => {
                 ))}
                 <hr />
                 <form
-                  className="d-flex flex-row mb-2 bg-custom-dark-blue"
+                  className="d-flex flex-row mb-2 bg-custom-pale-gold"
                   onSubmit={addField}
                 >
                   <div className="w-50 p-2">
-                    <div className="border border-primary rounded">
+                    <div className="border border-light rounded">
                       <input
-                        className="text-light bg-transparent form-control form-control-sm border border-0"
+                        className="text-dark bg-custom-paper form-control form-control-sm border border-0"
                         type="text"
                         placeholder="Field Name"
                         aria-label="Field Name"
@@ -159,25 +157,21 @@ const AddTemplateModal = ({ setErrors, setAlert }) => {
                     </div>
                   </div>
                   <div className="w-50 p-2 d-flex flex-row">
-                    <div className="w-75 border border-primary rounded">
+                    <div className="w-75 border border-light rounded">
                       <select
-                        className="text-light bg-transparent form-control form-control-sm border border-0"
+                        className="text-dark bg-custom-paper form-control form-control-sm border border-0"
                         value={fieldType}
                         onChange={e => setFieldType(e.target.value)}
                       >
-                        <option value="text" className="bg-custom-dark-blue">
-                          text
-                        </option>
-                        <option value="number" className="bg-custom-dark-blue">
-                          number
-                        </option>
+                        <option value="text">text</option>
+                        <option value="number">number</option>
                       </select>
                     </div>
 
                     <div className="w-25 ml-3">
                       <button
                         type="submit"
-                        className="w-100 btn btn-sm btn-transparent border border-light text-light"
+                        className="w-100 btn btn-sm btn-custom-paper border border-light text-dark"
                       >
                         <i className="fa fa-fw fa-plus" />
                       </button>

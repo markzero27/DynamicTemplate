@@ -26,21 +26,33 @@ const RecordLists = ({ match, templates, records }) => {
   }, [records]);
 
   return (
-    <div className="mt-2 mx-auto bg-custom-blue pb-3 main">
-      <div className="bg-custom-slate-blue  py-2 container-fluid">
+    <div className="mt-2 mx-auto bg-custom-paper pb-3 main border border-dark">
+      <div className="bg-custom-dim-gold  py-2 container-fluid">
         <Link to="/" className="btn btn-sm btn-transparent text-light">
           <i className="fa fa-arrow-left" />
         </Link>
       </div>
-      <div className="bg-custom-blue container-fluid py-2 text-light">
+      <div className="bg-custom-paper container-fluid py-2 text-dark">
         <strong>{template && template.name} Record</strong>
       </div>
-      <div className="bg-custom-slate-blue container-fluid py-1  mb-3 clearfix">
+      <div className="bg-custom-dim-gold container-fluid py-1  mb-3 clearfix">
+        <form className="form-inline border border-light rounded w-25 px-2 float-left">
+          <i
+            className="fas fa-search text-light small pr-2"
+            aria-hidden="true"
+          />
+          <input
+            className="text-light bg-transparent form-control form-control-sm border border-0 ml-1 w-75"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
         <button
           type="button"
           data-toggle="modal"
           data-target="#addRecordModal"
-          className="btn btn-sm btn-primary bg-custom-light-blue custom-radius border border-light float-right px-3 small"
+          className="btn btn-sm text-light bg-custom-pale-gold custom-radius border border-light float-right px-3 small"
         >
           Add Record <i className="fa fa-plus ml-3" />
         </button>
@@ -72,7 +84,7 @@ const RecordLists = ({ match, templates, records }) => {
           ))}
 
         {record && record.length == 0 && (
-          <div className=" w-100 bg-custom-dark-blue p-2 clearfix text-center text-light">
+          <div className=" w-100 bg-custom-pale-gold p-2 clearfix text-center text-light">
             No record
           </div>
         )}

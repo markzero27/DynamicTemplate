@@ -6,7 +6,7 @@ const TemplateField = ({ field, index, removeField, editField }) => {
   const [fieldType, setfieldType] = useState(field.type);
   if (!editing) {
     return (
-      <div className="d-flex flex-row mb-2 bg-custom-dark-blue">
+      <div className="d-flex flex-row mb-2 bg-custom-pale-gold">
         <div className="w-50 p-2">
           <div className="border border-light rounded text-light px-2 pb-2">
             {field.name}
@@ -37,7 +37,7 @@ const TemplateField = ({ field, index, removeField, editField }) => {
   } else {
     return (
       <form
-        className="d-flex flex-row mb-2 bg-custom-dark-blue"
+        className="d-flex flex-row mb-2 bg-custom-pale-gold"
         onSubmit={e => {
           e.preventDefault();
           editField(index, fieldName, fieldType);
@@ -45,7 +45,7 @@ const TemplateField = ({ field, index, removeField, editField }) => {
         }}
       >
         <div className="w-50 p-2">
-          <div className="border border-danger rounded">
+          <div className="border border-primary rounded">
             <input
               className="text-light bg-transparent form-control form-control-sm border border-0"
               type="text"
@@ -57,16 +57,16 @@ const TemplateField = ({ field, index, removeField, editField }) => {
           </div>
         </div>
         <div className="w-50 p-2 d-flex flex-row">
-          <div className="w-75 border border-danger rounded">
+          <div className="w-75 border border-primary rounded">
             <select
               className="text-light bg-transparent form-control form-control-sm border border-0"
               value={fieldType}
               onChange={e => setfieldType(e.target.value)}
             >
-              <option value="text" className="bg-custom-dark-blue">
+              <option value="text" className="bg-custom-pale-gold">
                 text
               </option>
-              <option value="number" className="bg-custom-dark-blue">
+              <option value="number" className="bg-custom-pale-gold">
                 number
               </option>
             </select>

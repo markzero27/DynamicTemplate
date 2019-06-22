@@ -82,8 +82,8 @@ const AddRecordModal = ({ template, setErrors, setAlert }) => {
       <div className="modal-dialog modal-xl" role="document">
         <div className="modal-content">
           <div className="modal-body p-0">
-            <div className="bg-custom-blue pb-3  ">
-              <div className="bg-custom-slate-blue  py-2 container-fluid">
+            <div className="bg-custom-paper pb-3  ">
+              <div className="bg-custom-dim-gold  py-2 container-fluid">
                 <button
                   className="btn btn-sm btn-transparent text-light"
                   data-dismiss="modal"
@@ -92,7 +92,7 @@ const AddRecordModal = ({ template, setErrors, setAlert }) => {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-sm btn-primary bg-custom-light-blue custom-radius border border-light px-4 small float-right"
+                  className="btn btn-sm btn-primary bg-custom-pale-gold custom-radius border border-light px-4 small float-right"
                   data-dismiss="modal"
                   onClick={() => saveRecord()}
                 >
@@ -101,10 +101,10 @@ const AddRecordModal = ({ template, setErrors, setAlert }) => {
                 </button>
               </div>
 
-              <div className="container-fluid py-3 text-light ">
+              <div className="container-fluid py-2 text-dark ">
                 <strong> {templateName}</strong>
               </div>
-              <div className="bg-custom-slate-blue container-fluid py-1 clearfix mb-3">
+              <div className="bg-custom-dim-gold container-fluid py-1 clearfix mb-3">
                 <div className="d-flex flex-row text-light mt-2 p-3" />
               </div>
               <div className="container-fluid mb-2">
@@ -117,20 +117,20 @@ const AddRecordModal = ({ template, setErrors, setAlert }) => {
                 >
                   {fields.map((field, index) => (
                     <div
-                      className="d-flex flex-row bg-custom-dark-blue mb-1 px-3 py-2"
+                      className="d-flex flex-row bg-custom-pale-gold mb-1 px-3 py-2"
                       key={index}
                     >
-                      <div className="text-secondary w-25 text-capitalize">
+                      <div className="text-light w-25 text-capitalize">
                         {field.name} :
                       </div>
-                      <div className="ml-2 w-50 border border-primary rounded">
+                      <div className="ml-2 w-50 border border-light rounded">
                         <input
                           type={field.type}
                           onInput={e => {
                             localStorage.setItem(field.name, e.target.value);
                             setFieldValue(e, index);
                           }}
-                          className="w-100 bg-custom-dark-blue border border-0 pl-3 py-1 pr-1 text-light rounded"
+                          className="w-100 bg-custom-paper border border-0 pl-3 py-1 pr-1 text-dark rounded"
                         />
                       </div>
                     </div>

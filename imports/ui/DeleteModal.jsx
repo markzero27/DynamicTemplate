@@ -33,44 +33,53 @@ const DeleteRecordModal = ({ id, setRecord, setAlert, set }) => {
   if (set == "template") {
   }
   return (
-    <div
-      className="modal fade"
-      id="deleteRecordModal"
-      tabIndex="-1"
-      role="dialog"
-      aria-labelledby="deleteRecordModalLabel"
-      aria-hidden="true"
-    >
-      <div
-        className="modal-dialog modal-dialog-centered modal-sm"
-        role="document"
+    <React.Fragment>
+      <button
+        className="bg-custom-pale-gold border-0 text-center small text-light mr-2 box"
+        data-toggle="modal"
+        data-target={`#deleteRecordModal${id}`}
       >
-        <div className="modal-content bg-custom-slate-blue">
-          <div className="modal-body text-light">
-            Delete {set}?
-            <div className="float-right">
-              <button
-                type="button"
-                className="btn btn-secondary btn-sm mr-2"
-                data-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                className="btn btn-sm btn-danger "
-                data-dismiss="modal"
-                onClick={() => {
-                  deleteRecord();
-                }}
-              >
-                Confirm
-              </button>
+        <i className="fas fa-trash-alt" />
+      </button>
+      <div
+        className="modal fade"
+        id={`deleteRecordModal${id}`}
+        tabIndex="-1"
+        role="dialog"
+        aria-labelledby="deleteRecordModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          className="modal-dialog modal-dialog-centered modal-sm"
+          role="document"
+        >
+          <div className="modal-content bg-custom-dim-gold">
+            <div className="modal-body text-light">
+              Delete {set}?
+              <div className="float-right">
+                <button
+                  type="button"
+                  className="btn btn-secondary btn-sm mr-2"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-sm btn-danger "
+                  data-dismiss="modal"
+                  onClick={() => {
+                    deleteRecord();
+                  }}
+                >
+                  Confirm
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

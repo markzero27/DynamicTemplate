@@ -15,16 +15,16 @@ const ManageTemplates = ({ templates }) => {
   };
 
   return (
-    <div className="mt-2 mx-auto bg-custom-blue pb-3 main ">
-      <div className="bg-custom-slate-blue  py-2 container-fluid">
+    <div className="mt-2 mx-auto bg-custom-paper pb-3 main border border-dark ">
+      <div className="bg-custom-dim-gold  py-2 container-fluid">
         <Link to="/" className="btn btn-transparent">
           <i className="fa fa-arrow-left text-light" />
         </Link>
       </div>
-      <div className="bg-custom-blue container-fluid py-2 text-light">
+      <div className="bg-custom-paper container-fluid py-2 text-dark">
         <strong>Manage Record Templates</strong>
       </div>
-      <div className="bg-custom-slate-blue container-fluid py-2 clearfix mb-3 ">
+      <div className="bg-custom-dim-gold container-fluid py-2 clearfix mb-3 ">
         <form className="form-inline border border-light rounded w-25 px-2 float-left">
           <i
             className="fas fa-search text-light small pr-2"
@@ -41,7 +41,7 @@ const ManageTemplates = ({ templates }) => {
           type="button"
           data-toggle="modal"
           data-target="#addTemplateModal"
-          className="btn btn-sm btn-primary bg-custom-light-blue custom-radius border border-light float-right px-3 small"
+          className="btn btn-sm btn-primary bg-custom-pale-gold custom-radius border border-light float-right px-3 small"
         >
           Add Templates <i className="fa fa-plus ml-3" />
         </button>
@@ -60,6 +60,7 @@ const ManageTemplates = ({ templates }) => {
           templates.map((template, index) => (
             <TemplateLists
               key={template._id}
+              id={template._id}
               template={template}
               setAlert={setAlert}
               setErrors={setErrors}
@@ -67,7 +68,7 @@ const ManageTemplates = ({ templates }) => {
             />
           ))
         ) : (
-          <div className=" w-100 bg-custom-dark-blue p-2 clearfix text-center text-light">
+          <div className=" w-100 bg-custom-pale-gold p-2 clearfix text-center text-dark">
             No Template
           </div>
         )}
